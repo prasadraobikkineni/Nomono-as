@@ -1,0 +1,19 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: file-services
+  labels:
+    app.kubernetes.io/name: file-services
+spec:
+  rules:
+  - host: file-services-trial.com
+    http:
+      paths:
+        - path: /api/uploading
+          backend:
+            serviceName: file-services
+            servicePort: 8080
+        - path: /api/processing
+          backend:
+            serviceName: file-services
+            servicePort: 8081

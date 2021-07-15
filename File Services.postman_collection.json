@@ -1,0 +1,155 @@
+{
+	"info": {
+		"_postman_id": "d0eafecd-8c45-4d38-b13a-aaa74a291359",
+		"name": "File Services",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Uploading",
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": [
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/C:/Users/manis/Downloads/StarWars60.wav"
+						}
+					],
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://file-services-trial.com/api/uploading/files",
+					"protocol": "http",
+					"host": [
+						"file-services-trial",
+						"com"
+					],
+					"path": [
+						"api",
+						"uploading",
+						"files"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Processing 1 - Rename",
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": [
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/C:/Users/manis/Downloads/StarWars60.wav"
+						}
+					],
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://file-services-trial.com/api/processing/files/StarWars60.wav?newName=new-name.wav",
+					"protocol": "http",
+					"host": [
+						"file-services-trial",
+						"com"
+					],
+					"path": [
+						"api",
+						"processing",
+						"files",
+						"StarWars60.wav"
+					],
+					"query": [
+						{
+							"key": "newName",
+							"value": "new-name.wav"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Processing 2 - Delete",
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": [
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/C:/Users/manis/Downloads/StarWars60.wav"
+						}
+					],
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://file-services-trial.com/api/processing/files/StarWars60.wav",
+					"protocol": "http",
+					"host": [
+						"file-services-trial",
+						"com"
+					],
+					"path": [
+						"api",
+						"processing",
+						"files",
+						"StarWars60.wav"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
